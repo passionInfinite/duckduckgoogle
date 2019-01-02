@@ -51,30 +51,48 @@ Array.from(mainBlocks).forEach((mainBlock, index) => {
 });
 // margin to header search bar
 var headerBlock = document.getElementsByClassName('header__search');
-headerBlock[0].style.marginLeft = '50px';
+/*
+Check wheather the context is of the search home page as header__search is not available
+after performing the search.
+*/
+if (headerBlock.length > 0) {
+    headerBlock[0].style.marginLeft = '50px';
+}
 // padding to web content wrapper
 var webContentWrapper = document.getElementById('web_content_wrapper');
-webContentWrapper.style.paddingLeft = '40px';
+if (webContentWrapper) {
+    webContentWrapper.style.paddingLeft = '40px';
+}
 // padding to vertical wrapper
 var verticalWrapper = document.getElementById('vertical_wrapper');
-verticalWrapper.style.paddingLeft = '40px';
+if (verticalWrapper) {
+    verticalWrapper.style.paddingLeft = '40px';
+}
 // padding to footer
 var footerLeft = document.getElementsByClassName('footer__left');
 var footerRight = document.getElementsByClassName('footer__right');
-footerLeft[0].style.paddingLeft = '50px';
-footerRight[0].style.paddingLeft = '50px';
+if (footerLeft.length > 0 && footerRight.length > 0) {
+    footerLeft[0].style.paddingLeft = '50px';
+    footerRight[0].style.paddingLeft = '50px';
+}
 
 // margin to duckbar (tabbars)
 var duckbar = document.getElementById('duckbar');
-duckbar.style.marginLeft = '50px';
+if (duckbar) {
+    duckbar.style.marginLeft = '50px';
+}
 
 // height auto duckbar wrapper
 var duckbarWrapper = document.getElementsByClassName('zcm-wrap');
-duckbarWrapper[0].style.height = 'auto';
-duckbarWrapper[0].style.lineHeight = '10px';
+if (duckbarWrapper.length > 0) {
+    duckbarWrapper[0].style.height = 'auto';
+    duckbarWrapper[0].style.lineHeight = '10px';
+}
 // height auto for tabs container
 var tabsContainer = document.getElementsByClassName('zcm');
-tabsContainer[0].style.height = 'auto';
+if (tabsContainer.length > 0) {
+    tabsContainer[0].style.height = 'auto';
+}
 // padding to tab items
 var tabItems = document.getElementsByClassName('zcm__link');
 Array.from(tabItems).forEach(tab => {
